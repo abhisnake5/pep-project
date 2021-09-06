@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        html {
+            min-height: 100%;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(180deg, #6e75f7 0%, #3740e9 25%, #1f27cc 50%, #070b55 75%, #01042e 100%);
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        h1,
+        p {
+            color: darkred;
+            font-family: 'Nunito', sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 4rem;
+        }
+
+        h2,
+        h3 {
+            font-family: 'Nunito', sans-serif, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            color: rgb(121, 56, 44);
+            font-size: 2.5rem;
+        }
+
+        mark {
+            background-color: darkorange;
+        }
+
+        h3,
+        em,
+        u {
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+
+        a:visited {
+            color: rgba(53, 69, 75, 0.925);
+        }
+
+        a:hover {
+            color: darkviolet;
+        }
+
+        p,
+        a {
+            line-height: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 15px;
+            background-color: rgba(202, 68, 68, 0.562);
+            box-shadow: 0px 0px 0 10px rgba(6, 153, 202, 0.03), 0px 0px 0 10px rgba(4, 90, 119, 0.02);
+        }
+
+        section:last-child {
+            margin-bottom: 1rem;
+        }
+
+        article {
+            background-color: rgb(243, 176, 176); 
+            max-width: 70%;
+        }
+
+        @media screen and (max-width: 1000px) {
+
+img {
+    width: 70%;
+    height: auto;
+}   
+
+   article {
+       max-width: 80%;
+   }
+
+   section {
+       margin-bottom: 4rem;
+       padding: 2.4rem;
+   }
+   
+}
+
+        @media screen and (max-width: 600px) {
+
+         img {
+             width: 100%;
+             height: auto;
+         }   
+
+            article {
+                max-width: 90%;
+            }
+
+            section {
+                margin-bottom: 6rem;
+                padding: 2.4rem;
+            }
+            
+        }
+
+    </style>
+    <title>PepCoding Article</title>
+</head>
+
+<body>
+    <article class="container">
+
+        <h1 style="text-align: start; padding-top: 4px;">
+            SUM OF 2 ARRAYS
+        </h1>
+
+        <h4>
+            <blockquote style="text-align: end;">
+                “Life is full of risks anyway; why not take them?”
+            </blockquote>
+        </h4>
+
+        <p>Hey coder ! We are here to help you and be your coding buddy. Let’s go through the step by step explanation
+            of this question together. This is going to be one hell of a ride!</p>
+        <section>
+            <h3><em><u>Problem Discussion:</u></em></h3>
+            <p>Let us guide you through the given problem.
+            </p>
+            <p>You are given 2 numbers in the form of arrays.</p>
+            <p>Now we know what mischief must be cooking in your mind. <mark>No, converting arrays into numbers and
+                    adding
+                    them is not possible as the length of arrays can be very lengthy.</mark>
+            </p>
+            <p>Reader, suppose we are given the following input : 31075 and 111111 , then notice the places of the
+                digits
+                when adding :
+            </p>
+
+            <img src="./fig1.png" alt="image" height="300px" width="700px" style="vertical-align: top;" />
+
+            <p>We also suggest you watch the question video to understand it better.
+            </p>
+            <a href="https://www.youtube.com/watch?v=aSb29e8OoZs&list=TLGGB_IdxIhGwAQxNDA4MjAyMQ&t=1s" target="_blank">Sum of 2 Arrays- Question video</a>
+        </section>
+        <section>
+
+            <h3><em><u>Approach:</u></em></h3>
+            <p>For the explanation we take the two numbers as 93468 and 1988 .We declare a new array (say sum[ ]) whose
+                length is the larger of the two input array lengths. </p>
+            <img src="./fig2.png" alt="image" height="300px" width="460px"
+                style="vertical-align: top; float: right; margin-left: 4px;" />
+
+            <p>We put pointers i ,j and k and the last place of all the arrays.</p>
+            <p>In the first iteration, <mark>we add the values at i and j and store (i + j) %10 in k. Then we take (i +
+                    j) /
+                    10 in carry (denoted by ‘c’) and decrease i , j and k by one place for all the subsequent
+                    iterations</mark> as follows:
+            </p>
+            <img src="./fig3.png" alt="image" height="300px" width="470px"
+                style="vertical-align: top; float: left; margin-right: 4px;" />
+
+            <p>When j pointer reaches -1 position , we add only value at i and value of carry and store it in the kth
+                position of the sum array.
+            <p>Now reader, in case the carry at last position of i (i.e at 9) was 1 , then the sum would have been 10.
+                So,
+                in such a case we print ‘1’ by itself, store ‘0’ at kth position and then print the entire sum array.
+            </p>
+            <p><mark>We highly recommend you to refer to Youtube video Sum of two arrays[0:46- 3:19] for detailed
+                    explanation</mark> </p>
+            <a href="https://www.youtube.com/watch?v=BzJK1zNXwcU&t=345s" target="_blank">Sum of two Arrays Solution
+                video link</a>
+        </section>
+        <section>
+            <h3><em><u>Code:</u></em></h3>
+            <pre>
+            <code>
+import java.io.*;
+
+import java.util.*;
+
+public class Main {
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+    int n1 = 5;
+    int[] a1 = new int[]{ 3, 1, 0, 7, 5 };
+    int n2 = 6;
+    int[] a2 = new int[]{ 1, 1, 1, 1, 1, 1 };
+
+    int[] sum = new int[n1 > n2 ? n1 : n2];
+    int i = n1 - 1;
+    int j = n2 - 1;
+    int k = sum.length - 1;
+    int c = 0;
+    while (i >= 0 || j >= 0) {
+      int d = c;
+
+      if (i >= 0)
+        d += a1[i];
+
+      if (j >= 0)
+        d += a2[j];
+
+      c = d / 10;
+      d = d % 10;
+      sum[k] = d;
+
+      i--;
+      j--;
+      k--;
+    }
+
+    if (c > 0) {
+      System.out.println(c);
+    }
+    for (int val : sum) {
+      System.out.println(val);
+    }
+  }
+
+}
+            </code>
+            </pre>
+        </section>
+        <section>
+
+            <h3><em><u>Time & Space Complexity:</u></em></h3>
+            <ol>
+                <li>
+                    <h4>TIME COMPLEXITY- O(n)</h4>
+                </li>
+                <p>This time complexity is linear because for and while loops are used.
+                </p>
+                <li>
+                    <h4>SPACE COMPLEXITY- O(n) <h4>
+                </li>
+                <p>As a 1D array is used in the code, therefore space complexity is constant.
+                </p>
+            </ol>
+        </section>
+        <section>
+            <h3><em><u>Analysis:</u></em></h3>
+
+            <p>Your patience has been much valued. Let’s discuss the “WHY” aspect of this question now.</p>
+
+            <p><mark>Be attentive ! The most important part of this article awaits you.
+                </mark></p>
+            <ol>
+                <li> Initial value of carry is kept 0 and it changes in each iteration.</li>
+                <li>We iterate this code for k>=0 so that all positions of sum[ ] are filled.</li>
+                <li> Reader, here, ‘d ‘ denotes the digit which is to be placed at kth position in sum[ ]. We initialize
+                    it
+                    with the value stored in carry. </li>
+                <li>If i is at a non-negative position (i.e some part of the number is still left to be added) then the
+                    value at i is added to the previous value of ‘d’. </li>
+                <li>Similarly, if j is non-negative then the value of j is also added to the previous value of ‘d’.
+                </li>
+                <li> As discussed previously , carry is updated as carry=d/10 and stores the ten’s place value of ‘d’ .
+                </li>
+                <li>Also the digit, ‘d’ is updated to d=d%10 to store the one’s place value of ‘d’. </li>
+                <li>You need to store ‘d’ in the kth position of the sum[ ] array now. </li>
+                <li>At last , decrement the values of i , j and k .</li>
+            </ol>
+            <p><mark>We can’t stress you enough to refer to the Youtube video [5:30 -9:20]. </mark></p>
+            <a href="https://www.youtube.com/watch?v=BzJK1zNXwcU&t=345s" target="_blank">Sum of two Arrays Solution
+                video link
+            </a>
+            <p><em>With this you have completed the question of Sum of 2 Arrays . Don’t forget to keep revising the
+                    question. We’ll see you next time with a new question. Till then, Adios !
+                </em></p>
+        </section>
+        <section>
+            <h3><em><u>SOME RANDOM “GYAAN”:</u></em></h3>
+            <ol>
+                <li><strong>Come back to the question next day if you reach any mind blocks.</strong></li>
+                <li><strong>Correct way to attempt the questions to try them yourself first , read the article and
+                        finally
+                        refer to the Youtube video.</strong></li>
+                <li><strong>We believe in you, now you need to believe in yourself.</strong></li>
+            </ol>
+        </section>
+        <cite style="text-align: end;">
+            <p><strong>Article Tags: 1D Arrays</strong></p>
+            <p>-Article by Shreeya Gupta</p>
+        </cite>
+    </article>
+    <script src="/myScript.js"></script>
+</body>
+
+</html>
